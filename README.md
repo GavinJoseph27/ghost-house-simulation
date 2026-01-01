@@ -1,21 +1,26 @@
 Name: Gavin Joseph
 
-What is the purpose of each file: The purpose of main.c is that it handles user input, 
-it is used to populate the house with rooms provided, it is used to create the ghost 
-and hunter threads. It joins all threads after the simulation ends. It prints the final 
-results, the case-file checklist, and whelter the hunter or the ghost wins. It releases 
-all allocated memory and destroys semaphores. The purpose of functions.c is that it 
-contains all the logic of the game. Like ghost_init, which initializes ghost state and 
-starting room. Also, hunter_add, which creates and initializes hunter structures. Then, 
-there is roomstack_push, roomstack_pop, roomstack_clear, which are stacks, that help 
-the hunter keep track of the path they're going. Then, their is hunter_thread which 
-keeps track of everything the hunter does using multithread. Finally, there is ghost_
-thread which is a multithread that tracks the ghost movement and the evidence they 
-leave. The purpose of helpers.c is for the logging functions, which keeps track of 
-the movements that both the hunter and the ghost make. It also helps with the random 
-integer generator function, rand_int_threadsafe. Then, there is the house_populate_rooms 
-which helps populate all the rooms. The purpose of defs.h is to define all the structs, 
-enums and constants. It also contains the function prototypes of functions.c. The purpose 
-of helpers.h is to contain the funtion prototypes of helpers.c. Makefile builds the project, 
-and it can clean up the logs using make clean and complie the code with make. The purpose 
-of validate_logs.py is that it checks that all the log CSV files follow the required format. 
+Overview: This project is a multithreaded simulation written in C that models a haunted house environment with concurrent agents. A ghost and multiple hunters operate simultaneously across shared rooms, interacting through shared state while leaving and collecting evidence. The simulation demonstrates systems-level programming concepts including concurrency, synchronization, shared memory coordination, and thread lifecycle management.
+The project was implemented using POSIX threads (pthreads) and semaphores to ensure thread-safe execution and correct synchronization between agents.
+
+Key Concepts Demonstrated:
+- Multithreading with POSIX threads (pthreads)
+- Synchronization using semaphores and mutexes
+- Shared memory coordination
+- Race condition and deadlock avoidance
+
+File Structure: 
+- main.c
+Handles program initialization and user input, populates the house with rooms, creates and manages ghost and hunter threads, and joins all threads at the end of the simulation. Prints final results including the case-file checklist and win condition, then releases allocated memory and destroys synchronization primitives.
+- functions.c
+Contains the core simulation logic, including initialization of ghost and hunter structures, state updates, evidence handling, and movement behavior. Implements stack-based path tracking for hunters and defines the behavior executed by hunter and ghost threads.
+- helpers.c
+Provides logging utilities to track ghost and hunter movements, along with a thread-safe random number generator (rand_int_threadsafe) and helper functions for populating rooms.
+- defs.h
+Defines shared data structures, enums, constants, and function prototypes used across the project.
+- helpers.h
+Contains function prototypes for helper and logging utilities.
+- Makefile
+Builds the project using make and removes generated logs and binaries using make clean.
+- validate_logs.py
+Verifies that generated CSV log files conform to the required format.
