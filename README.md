@@ -40,7 +40,7 @@ The project was implemented using POSIX threads (pthreads) and semaphores to ens
 - GCC or Clang with POSIX threads (pthreads) support
 - `make`
 
-- Steps
+### Steps
 1. Clone the repository: git clone https://github.com/GavinJoseph27/ghost-house-simulation.git
 2. Navigate into the project directory: cd ghost-house-simulation
 3. Compile the project: make
