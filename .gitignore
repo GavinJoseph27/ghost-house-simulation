@@ -1,0 +1,9 @@
+# Build artifacts
+ghosthouse
+*.o
+
+# Logs
+log_*.csv
+
+# macOS junk
+.DS_Store
