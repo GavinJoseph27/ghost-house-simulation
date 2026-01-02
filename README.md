@@ -41,9 +41,19 @@ The project was implemented using POSIX threads (pthreads) and semaphores to ens
 - `make`
 
 ### Steps
-1. Clone the repository: git clone https://github.com/GavinJoseph27/ghost-house-simulation.git
-2. Navigate into the project directory: cd ghost-house-simulation
-3. Compile the project: make
-4. Run the simulation: ./ghosthouse
-5. To remove compiled files and generated logs: make clean
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/GavinJoseph27/ghost-house-simulation.git
+2. Navigate into the project directory:
+   ```bash
+   cd ghost-house-simulation
+3. Compile the project:
+   ```bash
+   make
+4. Run the simulation:
+    ```bash
+   ./ghosthouse
+5. To remove compiled files and generated logs:
+    ```bash
+   make clean
 
